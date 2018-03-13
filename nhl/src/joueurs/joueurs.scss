@@ -1,0 +1,59 @@
+.table-joueurs {
+    border-collapse:collapse;
+    margin: 0 auto;
+    .couleur-row {
+        background: #e4e4e4;
+    }
+    tbody {
+        tr.first-row {
+            background: #666;
+            th {
+                color: #fff;
+                font-size: .8em;
+                font-weight: normal;
+                text-transform: uppercase;
+                padding: 5px 0;
+                &.nom-joueur {
+                    text-align: left;
+                    padding-left: 2.5%;
+                }
+                &.position-joueur {
+                    text-align: left;
+                    min-width: 100px;
+                    padding-left: 2.5%;  
+                }
+                &.taille-joueur {
+                    text-align: left;
+                    min-width: 75px;
+                }
+                &.poids-joueur {
+                    text-align: left;
+                    min-width: 75px;
+                }
+                &.date-joueur {
+                    min-width: 150px;
+                }
+            }
+        }
+        td {
+            font-size: 15px;
+            &.img-joueurs {
+                img {
+                   height: 35px; 
+                }
+            }
+            &.numero-joueur {
+                min-width: 50px;
+                text-align: center;
+            }
+            &.joueur-date-de-naissance {
+                padding-left: 5%;
+                text-align: left;
+            }
+            &.taille-joueur {
+                padding-left: 1%;
+                text-align: left;
+            }
+        }
+    }
+}

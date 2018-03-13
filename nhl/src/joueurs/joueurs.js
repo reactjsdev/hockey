@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import './joueurs.scss';
 
-class Api extends Component {
+class TableJoueurs extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -37,11 +38,12 @@ class Api extends Component {
         return <div>Loading...</div>;
       } else {
         return (
-          <table>
+          <table className="table-joueurs">
             <tbody>
-                {items.map(item => (
-                <tr key={item.id}>
-                    <td>{item.first_name}</td><td>{item.position}</td><td>{item.birth_date}</td><td>{item.height}</td><td>{item.weight}</td><td>{item.birth_date}</td>
+                <tr className="first-row"><th className="photo-joueur"></th><th className="numero-joueur">Nº</th><th className="nom-joueur">Nom</th><th className="position-joueur">POS</th><th className="taille-joueur">Taille</th><th className="poids-joueur">Poids</th><th className="date-joueur">Date de naissance</th></tr>
+                {items.map((item, index) => (
+                <tr className={(index % 2 === 0) ? '' : 'couleur-row'} key={item.id}>
+                    <td className="img-joueurs"><img alt="joueur" height="50" src={item.image[1].url}/></td><td className="numero-joueur">{item.uniform_number}</td><td>{item.first_name} {item.last_name}</td><td>{item.position}</td><td className="taille-joueur">{item.height}</td><td>{item.weight}</td><td className="joueur-date-de-naissance">{item.birth_date}</td>
                 </tr>
                 ))}
             </tbody>
@@ -50,4 +52,4 @@ class Api extends Component {
       }
     }
   }
-  export default Api;
+  export default TableJoueurs;
